@@ -24,7 +24,7 @@ func main() {
 		ClientID:     "L7xxd11b2cd54f5341b5ad7acdc90e3c6807",
 		ClientSecret: "4169a027773442f6b09d307a6a851715",
 		Scopes:       []string{"oob"},
-		RedirectURL:  "https://intense-plateau-14305.herokuapp.com/authCallbac",
+		RedirectURL:  "https://intense-plateau-14305.herokuapp.com/authCallback",
 		Endpoint: oauth2.Endpoint{
 			AuthURL:  "https://apis.hootsuite.com/auth/oauth/v2/authorize",
 			TokenURL: "https://apis.hootsuite.com/auth/oauth/v2/token",
