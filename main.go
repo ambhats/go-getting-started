@@ -15,7 +15,7 @@ import (
 	"fmt"
 )
 
-var client http.Client
+//var client http.Client
 
 func main() {
 
@@ -47,7 +47,7 @@ func main() {
 
 	router.GET("/login", func(c *gin.Context) {
 		url := conf.AuthCodeURL("state", oauth2.AccessTypeOnline)
-		c.Redirect(0, url)
+		c.Redirect(301, url)
 	})
 
 
