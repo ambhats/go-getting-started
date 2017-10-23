@@ -3,6 +3,18 @@
 	"ignore": "test",
 	"package": [
 		{
+			"path": "appengine",
+			"revision": ""
+		},
+		{
+			"path": "appengine_internal",
+			"revision": ""
+		},
+		{
+			"path": "appengine_internal/base",
+			"revision": ""
+		},
+		{
 			"checksumSHA1": "Qq7Gzany1n6gK6hpZQq9UXFhGGo=",
 			"comment": "v1.0rc1-110-g4cc2de6",
 			"path": "github.com/gin-gonic/gin",
@@ -19,6 +31,12 @@
 			"comment": "v1.0rc1-110-g4cc2de6",
 			"path": "github.com/gin-gonic/gin/render",
 			"revision": "4cc2de6207f4128624cbdd16be30f64966c67c08"
+		},
+		{
+			"checksumSHA1": "yqF125xVSkmfLpIVGrLlfE05IUk=",
+			"path": "github.com/golang/protobuf/proto",
+			"revision": "1643683e1b54a9e88ad26d98f81400c8c9d9f4f9",
+			"revisionTime": "2017-10-21T04:39:52Z"
 		},
 		{
 			"checksumSHA1": "AaqJkPBgKZlGoT32sOEsU3ThqnA=",
@@ -59,10 +77,74 @@
 			"revision": "d9558e5c97f85372afee28cf2b6059d7d3818919"
 		},
 		{
+			"checksumSHA1": "WHc3uByvGaMcnSoI21fhzYgbOgg=",
+			"path": "golang.org/x/net/context/ctxhttp",
+			"revision": "5561cd9b4330353950f399814f427425c0a26fd2",
+			"revisionTime": "2017-10-22T21:16:41Z"
+		},
+		{
+			"checksumSHA1": "HmVJmSDDCwsPJQrp7ml2gXb2szg=",
+			"path": "golang.org/x/oauth2",
+			"revision": "bb50c06baba3d0c76f9d125c0719093e315b5b44",
+			"revisionTime": "2017-09-28T00:25:42Z"
+		},
+		{
+			"checksumSHA1": "4XCNzl3cgGtdd0SrUZHSBdsW+m4=",
+			"path": "golang.org/x/oauth2/internal",
+			"revision": "bb50c06baba3d0c76f9d125c0719093e315b5b44",
+			"revisionTime": "2017-09-28T00:25:42Z"
+		},
+		{
+			"checksumSHA1": "4o2JkeR2LyUfZ7BQIzHUejyqKno=",
+			"path": "google.golang.org/appengine/internal",
+			"revision": "a2e0dc829727a4f957a7428b1f322805cfc1f362",
+			"revisionTime": "2017-10-11T21:50:12Z"
+		},
+		{
+			"checksumSHA1": "TsNO8P0xUlLNyh3Ic/tzSp/fDWM=",
+			"path": "google.golang.org/appengine/internal/base",
+			"revision": "a2e0dc829727a4f957a7428b1f322805cfc1f362",
+			"revisionTime": "2017-10-11T21:50:12Z"
+		},
+		{
+			"checksumSHA1": "5QsV5oLGSfKZqTCVXP6NRz5T4Tw=",
+			"path": "google.golang.org/appengine/internal/datastore",
+			"revision": "a2e0dc829727a4f957a7428b1f322805cfc1f362",
+			"revisionTime": "2017-10-11T21:50:12Z"
+		},
+		{
+			"checksumSHA1": "Gep2T9zmVYV8qZfK2gu3zrmG6QE=",
+			"path": "google.golang.org/appengine/internal/log",
+			"revision": "a2e0dc829727a4f957a7428b1f322805cfc1f362",
+			"revisionTime": "2017-10-11T21:50:12Z"
+		},
+		{
+			"checksumSHA1": "a1XY7rz3BieOVqVI2Et6rKiwQCk=",
+			"path": "google.golang.org/appengine/internal/remote_api",
+			"revision": "a2e0dc829727a4f957a7428b1f322805cfc1f362",
+			"revisionTime": "2017-10-11T21:50:12Z"
+		},
+		{
+			"checksumSHA1": "QtAbHtHmDzcf6vOV9eqlCpKgjiw=",
+			"path": "google.golang.org/appengine/internal/urlfetch",
+			"revision": "a2e0dc829727a4f957a7428b1f322805cfc1f362",
+			"revisionTime": "2017-10-11T21:50:12Z"
+		},
+		{
+			"checksumSHA1": "akOV9pYnCbcPA8wJUutSQVibdyg=",
+			"path": "google.golang.org/appengine/urlfetch",
+			"revision": "a2e0dc829727a4f957a7428b1f322805cfc1f362",
+			"revisionTime": "2017-10-11T21:50:12Z"
+		},
+		{
 			"checksumSHA1": "P7dBpV3QA/3GJWGNwb9Hn3BzCQs=",
 			"comment": "v5.9.1",
 			"path": "gopkg.in/bluesuncorp/validator.v5",
 			"revision": "d627af88ac021317a280d320986282a6dc97549a"
+		},
+		{
+			"path": "oath2",
+			"revision": ""
 		}
 	],
 	"rootPath": "github.com/heroku/go-getting-started"
