@@ -52,7 +52,7 @@ func main() {
 
 
 	router.GET("/authCallback", func(c *gin.Context) {
-		var code = "" //TODO grab code from URL
+		var code = c.Param("code")
 		tok, err := conf.Exchange(ctx, code)
 		if err != nil {
 			log.Fatal(err)
