@@ -8,14 +8,14 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/russross/blackfriday"
 	_ "github.com/heroku/x/hmetrics/onload"
-	"fmt"
+	//"fmt"
 	"golang.org/x/net/context"
 	"golang.org/x/oauth2"
+	"io/ioutil"
+	"fmt"
 )
 
-var ctx
-var conf
-
+var client http.Client
 
 func main() {
 
@@ -51,6 +51,19 @@ func main() {
 	})
 
 
+	router.GET("/authCallback", func(c *gin.Context) {
+		var code = "" //TODO grab code from URL
+		tok, err := conf.Exchange(ctx, code)
+		if err != nil {
+			log.Fatal(err)
+		}
+
+		client := conf.Client(ctx, tok)
+		resp, err := client.Get("https://apis.hootsuite.com/v1/messages/v1/messages?startTime=2017-01-01T00%3A00%3A00Z&endTime=2017-01-15T17%3A55%3A01Z")
+		body, _ := ioutil.ReadAll(resp.Body)
+		fmt.Println(string(body[:]))
+		c.String(http.StatusOK, string(body[:]))
+	})
 
 
 
