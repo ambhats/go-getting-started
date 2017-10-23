@@ -57,8 +57,9 @@ func main() {
 		if err != nil {
 			log.Fatal(err)
 		}
-
+		fmt.Println("Token:", tok)
 		client := conf.Client(ctx, tok)
+		fmt.Println(client)
 		resp, err := client.Get("https://apis.hootsuite.com/v1/messages/v1/messages?startTime=2017-01-01T00%3A00%3A00Z&endTime=2017-01-15T17%3A55%3A01Z")
 		body, _ := ioutil.ReadAll(resp.Body)
 		fmt.Println(string(body[:]))
