@@ -13,6 +13,7 @@ import (
 	"golang.org/x/oauth2"
 	"io/ioutil"
 	"fmt"
+	"time"
 )
 
 //var client http.Client
@@ -52,7 +53,7 @@ func main() {
 
 
 	router.GET("/authCallback", func(c *gin.Context) {
-		var code = c.Query("code")
+		code := c.Query("code")
 		tok, err := conf.Exchange(ctx, code)
 		if err != nil {
 			log.Fatal(err)
@@ -60,7 +61,16 @@ func main() {
 		fmt.Println("Token:", tok)
 		client := conf.Client(ctx, tok)
 		fmt.Println(client)
-		resp, err := client.Get("https://apis.hootsuite.com/v1/messages/v1/messages?startTime=2017-01-01T00%3A00%3A00Z&endTime=2017-01-15T17%3A55%3A01Z")
+
+		currentTime := time.Now()
+		endTime := currentTime.Add(time.Hour * time.Duration(336)) //add 336 hours (14 days * 24hrs)
+
+		fmt.Println("CurrentTime:", currentTime.Format(time.RFC3339))
+		fmt.Println("EndTime:", currentTime.Format(time.RFC3339))
+
+		url := fmt.Sprintf("https://apis.hootsuite.com/v1/messages/v1/messages?startTime=%s&endTime=%s&limit=100", currentTime, endTime)
+
+		resp, err := client.Get(url)
 		body, _ := ioutil.ReadAll(resp.Body)
 		fmt.Println(string(body[:]))
 		c.String(http.StatusOK, string(body[:]))
