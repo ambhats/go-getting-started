@@ -68,7 +68,7 @@ func main() {
 		fmt.Println("CurrentTime:", currentTime.Format(time.RFC3339))
 		fmt.Println("EndTime:", endTime.Format(time.RFC3339))
 
-		url := fmt.Sprintf("https://apis.hootsuite.com/v1/messages/v1/messages?startTime=%s&endTime=%s&limit=100", currentTime, endTime)
+		url := fmt.Sprintf("https://apis.hootsuite.com/v1/messages?startTime=%s&endTime=%s&limit=100", currentTime, endTime)
 
 		fmt.Println("Request URL:", url)
 		resp, err := client.Get(url)
