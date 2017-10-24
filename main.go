@@ -72,7 +72,7 @@ func main() {
 
 		fmt.Println("Request URL:", url)
 		resp, err := client.Get(url)
-		fmt.Println("GET request completed")
+		fmt.Println("GET request completed: ", resp)
 		body, _ := ioutil.ReadAll(resp.Body)
 		fmt.Println(string(body[:]))
 		c.String(http.StatusOK, string(body[:]))
