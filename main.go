@@ -63,7 +63,7 @@ func main() {
 		fmt.Println(client)
 
 		currentTime := time.Now()
-		endTime := currentTime.Add(time.Hour * time.Duration(336)) //add 336 hours (14 days * 24hrs)
+		endTime := currentTime.AddDate(0,0,14)// . Add(time.Hour * time.Duration(336)) //add 336 hours (14 days * 24hrs)
 
 		fmt.Println("CurrentTime:", currentTime.Format(time.RFC3339))
 		fmt.Println("EndTime:", currentTime.Format(time.RFC3339))
