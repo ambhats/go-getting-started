@@ -3,6 +3,7 @@ package main
 import (
 	"log"
 	"net/http"
+	"net/url"
 	"os"
 
 	"github.com/gin-gonic/gin"
@@ -47,8 +48,8 @@ func main() {
 
 
 	router.GET("/login", func(c *gin.Context) {
-		url := conf.AuthCodeURL("state", oauth2.AccessTypeOnline)
-		c.Redirect(301, url)
+		authURL := conf.AuthCodeURL("state", oauth2.AccessTypeOnline)
+		c.Redirect(301, authURL)
 	})
 
 
@@ -68,10 +69,10 @@ func main() {
 		fmt.Println("CurrentTime:", currentTime.Format(time.RFC3339))
 		fmt.Println("EndTime:", endTime.Format(time.RFC3339))
 
-		url := fmt.Sprintf("https://apis.hootsuite.com/v1/messages?startTime=%s&endTime=%s&limit=100", currentTime, endTime)
+		msgURL := fmt.Sprintf("https://apis.hootsuite.com/v1/messages?startTime=%s&endTime=%s&limit=100", url.QueryEscape(currentTime.Format(time.RFC3339)), url.QueryEscape(endTime.Format(time.RFC3339)))
 
-		fmt.Println("Request URL:", url)
-		resp, err := client.Get(url)
+		fmt.Println("Request URL:", msgURL)
+		resp, err := client.Get(msgURL)
 		fmt.Println("GET request completed: ", resp)
 		body, _ := ioutil.ReadAll(resp.Body)
 		fmt.Println(string(body[:]))
