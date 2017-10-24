@@ -70,7 +70,9 @@ func main() {
 
 		url := fmt.Sprintf("https://apis.hootsuite.com/v1/messages/v1/messages?startTime=%s&endTime=%s&limit=100", currentTime, endTime)
 
+		fmt.Println("Request URL:", url)
 		resp, err := client.Get(url)
+		fmt.Println("GET request completed")
 		body, _ := ioutil.ReadAll(resp.Body)
 		fmt.Println(string(body[:]))
 		c.String(http.StatusOK, string(body[:]))
